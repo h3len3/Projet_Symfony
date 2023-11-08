@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Admin - Liste ordinateurs{% endblock %}
+
+{% block body %}
+    <div class="container">
+    {{ include('menu/admin_menu.html.twig') }}
+
+    {# TODO Bouton ajouter ordi et Table #}
+    
+
+        <table class="table table-striped">
+
+            <thead>
+            <tr>
+                <th scope="col">Ref</th>
+                <th scope="col">Nom</th>
+                <th scope="col">Marque</th>
+                <th scope="col">Prix</th>
+                {#   #}
+                <th scope="col">Modifier</th>
+                <th scope="col">Supprimer</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            {% for ordinateur in ordinateurs %}
+                <tr>
+                    <td>{{ ordinateur.reference }}</td>
+                    <td>{{ ordinateur.nom }}</td>
+                    <td>{{ ordinateur.marque }}</td>
+                    <td>{{ ordinateur.prix }}</td>
+                    <td>__</td> 
+                    <td>__</td>
+                    {# TODO editer, supprimer #}
+                </tr>
+            {% endfor %}
+            </tbody>
+
+        </table>
+
+    </div>
+
+{% endblock %}
